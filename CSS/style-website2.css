@@ -1011,17 +1011,18 @@ text-shadow: 0 0 5px rgb(45, 7, 93), 0 0 10px rgb(36, 31, 31), 0 0 15px rgb(58, 
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 480px) {
   .navbar {
     align-items: flex-end; /* Align items to the left */
     padding: 15px; /* Add extra padding for touch-friendly design */
   }
 
   .navbar a {
-    font-size: 5px; /* Reduce font size for smaller screens */
+    font-size: 13px; /* Reduce font size for smaller screens */
     width: 50%; /* Make links full width */
     text-align: left; /* Align text to the left */
     margin: 5px 0; /* Add spacing between links */
 
   }
 }
+
