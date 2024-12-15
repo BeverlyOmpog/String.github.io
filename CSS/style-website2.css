@@ -1,5 +1,5 @@
 body {
-  background-color: #000000; 
+  box-sizing: border-box;
 }
 
 /* Header Styling */
@@ -54,31 +54,55 @@ h1, .p1 {
   text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(155, 155, 155), 0 0 15px rgb(120, 88, 88); /* Glowing text shadow */
 }
 
-
 .navbar {
-  position: fixed; /* Fix the navbar to the top of the viewport */
-  top: 0; /* Align it to the top */
-  width: 100%; /* Full width */
-  overflow: hidden; /* Hide overflow */
-  background: linear-gradient(rgb(195, 176, 138), #b74424); /* Gradient background */
-  z-index: 1000; /* Place it above other content */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a floating effect */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(rgb(195, 176, 138), #b74424);
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row; /* Arrange items horizontally */
+  justify-content: flex-start; /* Space between links */
+  align-items: center; /* Align items vertically */
+  row-gap: 0%;
+
 }
 
-/* Style the navigation bar links */
+
 .navbar a {
-  float: left; /* Keep links side-by-side */
-  display: block; /* Block display for responsiveness */
-  color: rgb(0, 0, 0); /* Black text color */
-  text-align: center; /* Center the text */
-  padding: 10px 15px; /* Padding for better spacing */
-  text-decoration: none; /* Remove underline */
-  border-radius: 20px; /* Rounded corners */
-  margin: 10px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 20px;
+  margin: 0 5px;
   font-size: 20px;
   font-weight: bold;
 }
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    align-items: flex-end; /* Align items to the right */
+    padding: 15px; /* Add extra padding for touch-friendly design */
+    width: 100%; /* Ensure the navbar doesn't exceed screen width */
+    box-sizing: border-box; /* Include padding in width */
+  }
+
+  .navbar a {
+    font-size: 10px; /* Adjust font size to prevent breaking */
+    width: auto; /* Adjust width dynamically */
+    text-align: left; /* Align text to the left */
+    margin: 5px 0; /* Add spacing between links */
+    overflow: hidden; /* Prevent content overflow */
+  }
+}
+
+
+
+
 
 /* Right-aligned link */
 .navbar a.right {
@@ -986,11 +1010,17 @@ text-shadow: 0 0 5px rgb(45, 7, 93), 0 0 10px rgb(36, 31, 31), 0 0 15px rgb(58, 
   }
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
+  .navbar {
+    align-items: flex-end; /* Align items to the left */
+    padding: 15px; /* Add extra padding for touch-friendly design */
+  }
+
   .navbar a {
-    float: none;
-    width: 100%;
+    font-size: 5px; /* Reduce font size for smaller screens */
+    width: 50%; /* Make links full width */
+    text-align: left; /* Align text to the left */
+    margin: 5px 0; /* Add spacing between links */
+
   }
 }
-
